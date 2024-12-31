@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectToDb = require('./db/db');
 const userRoutes = require('./Routes/user.routes');
+const captainRoutes = require('./Routes/captain.routes');
 
 dotenv.config();
 const app = express();
@@ -21,5 +22,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', userRoutes);
+app.use('/captains', captainRoutes);
 
 module.exports = app;
